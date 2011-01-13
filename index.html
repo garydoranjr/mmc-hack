@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link href="http://myminicity.com/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+    <script language="javascript" src="mmcgen.js"></script>
+    <script language="javascript">
+      function init(){
+          refresh();
+      }
+      function refresh(){
+          document.getElementById('city').innerHTML =
+              getMMC('wejank',
+              document.getElementById('pop').value,
+              document.getElementById('ind').value,
+              document.getElementById('tra').value,
+              document.getElementById('sec').value,
+              document.getElementById('env').value,
+              document.getElementById('com').value);
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="content">
+      <div id="city"></div>
+      <table>
+        <tr>
+          <td>Population</td>
+          <td>Industry</td>
+          <td>Transportation</td>
+          <td>Security</td>
+          <td>Environment</td>
+          <td>Business</td>
+          <td rowspan="2">
+            <button id="but" onclick="refresh()">Submit</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input id="pop" size="9" value="2727" /></td>
+          <td><input id="ind" size="5" value="775" /></td>
+          <td><input id="tra" size="5" value="531" /></td>
+          <td><input id="sec" size="5" value="939" /></td>
+          <td><input id="env" size="5" value="481" /></td>
+          <td><input id="com" size="5" value="366" /></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
